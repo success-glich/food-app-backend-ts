@@ -22,6 +22,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Welcome to Express & TypeScript Server");
 });
 
+// * Database connections
 const database = Database.getInstance();
 database.registerModels();
 
@@ -36,5 +37,5 @@ database
   });
 
 app.listen(port, () => {
-  console.log(`Server is Fire at http://localhost:${port}`);
+  console.log(`Server is running at http://localhost:${port}`);
 });

@@ -1,4 +1,5 @@
 import { Sequelize } from "sequelize-typescript";
+import vars from "./vars";
 // * import models
 
 class Database {
@@ -6,11 +7,11 @@ class Database {
   private sequelize: Sequelize;
   private constructor() {
     this.sequelize = new Sequelize({
-      dialect: "sqlite",
-      host: "localhost",
-      username: "XXXX",
-      password: "XXXX",
-      database: "XXXX",
+      dialect: "postgres",
+      host: vars.DB_HOST,
+      username: vars.DB_USERNAME,
+      password: vars.DB_PASSWORD,
+      database: vars.DB_NAME,
       logging: false,
       models: [],
     });
