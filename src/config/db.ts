@@ -1,6 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
 import vars from "./vars";
 // * import models
+import User from "../users/index";
 
 class Database {
   private static instance: Database;
@@ -13,7 +14,7 @@ class Database {
       password: vars.DB_PASSWORD,
       database: vars.DB_NAME,
       logging: false,
-      models: [],
+      models: [User],
     });
   }
   public static getInstance(): Database {
